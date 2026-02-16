@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Débloquez les projets de vos clients — Partenariat MG</title>
+<meta name="description" content="Votre client est bloqué financièrement ? Transmettez son contact. Je réalise une étude de regroupement de crédits. Vous ne vendez rien.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;line-height:1.65;color:#1e1e2e;background:#f6f7fb;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+:root{
+  --ymanci:#2D2A7B;--ymanci-d:#211e60;
+  --accent:#E8600A;--accent-l:#ff7b2e;
+  --success:#0fa96e;--off:#f6f7fb;
+  --border:#e4e6f0;--text:#1e1e2e;--muted:#64748b;
+  --radius:12px;--radius-lg:18px;
+  --shadow:0 2px 16px rgba(45,42,123,.08);
+  --shadow-lg:0 8px 40px rgba(45,42,123,.16)
+}
+h1,h2,h3{line-height:1.15;letter-spacing:-.025em;font-weight:800}
+h1{font-size:clamp(1.85rem,5.5vw,3rem)}
+h2{font-size:clamp(1.45rem,4vw,2.1rem)}
+h3{font-size:1.05rem;font-weight:700}
+.wrap{width:100%;max-width:820px;margin:0 auto;padding:0 1.25rem}
+section{padding:3.5rem 0}
+.s-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.section-intro{font-size:.97rem;color:var(--muted);margin-bottom:1.8rem;max-width:600px}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.8rem 1.6rem;border-radius:999px;font-weight:700;font-size:.9rem;transition:all .22s ease}
+.btn-orange{background:var(--accent);color:#fff}
+.btn-orange:hover{background:var(--accent-l);transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,96,10,.35)}
+.btn-white{background:#fff;color:var(--ymanci)}
+.btn-white:hover{background:#eef0ff;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.35)}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.btn-lg{padding:1rem 2rem;font-size:1rem}
+
+/* HEADER */
+#header{position:sticky;top:0;z-index:600;background:var(--ymanci);box-shadow:0 2px 20px rgba(45,42,123,.35)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.25rem}
+.logo-wrap{display:flex;align-items:center;gap:.65rem}
+.logo-sep{width:1px;height:22px;background:rgba(255,255,255,.2)}
+.logo-tagline{font-size:.72rem;color:rgba(255,255,255,.65);font-weight:500;line-height:1.3}
+.header-cta{background:var(--accent);color:#fff;padding:.5rem 1.1rem;border-radius:999px;font-weight:700;font-size:.8rem;white-space:nowrap;transition:background .2s}
+.header-cta:hover{background:var(--accent-l)}
+
+/* HERO */
+#hero{background:var(--ymanci);padding:3rem 0 3.5rem;position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;pointer-events:none}
+.orb-1{width:380px;height:380px;background:radial-gradient(circle,rgba(232,96,10,.18) 0%,transparent 70%);top:-120px;right:-80px}
+.orb-2{width:250px;height:250px;background:radial-gradient(circle,rgba(255,255,255,.06) 0%,transparent 70%);bottom:-60px;left:-40px}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.9);padding:.3rem .9rem;border-radius:999px;font-size:.73rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:1.3rem}
+.dot{width:7px;height:7px;background:#0fa96e;border-radius:50%;animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+#hero h1{color:#fff;margin-bottom:1.1rem}
+#hero h1 em{color:var(--accent);font-style:normal}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.72);max-width:540px;margin-bottom:2rem;line-height:1.75}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2.5rem}
+.hero-proof{display:flex;flex-wrap:wrap;gap:1rem;padding-top:1.8rem;border-top:1px solid rgba(255,255,255,.12)}
+.proof-chip{display:flex;align-items:center;gap:.4rem;font-size:.8rem;color:rgba(255,255,255,.65);font-weight:500}
+.proof-chip::before{content:'✓';color:#0fa96e;font-weight:800}
+
+/* DEFINITION */
+#definition{background:#fff}
+.def-box{background:var(--off);border-left:4px solid var(--ymanci);border-radius:0 var(--radius) var(--radius) 0;padding:1.4rem 1.5rem;margin-bottom:1.8rem}
+.def-box p{font-size:1rem;color:var(--text);margin:0;line-height:1.7}
+.def-box strong{color:var(--ymanci)}
+.outcomes{display:grid;gap:.7rem}
+.outcome{display:flex;align-items:flex-start;gap:.75rem;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:.9rem 1.1rem}
+.outcome-icon{font-size:1.2rem;flex-shrink:0}
+.outcome p{font-size:.88rem;color:var(--muted);margin:0;line-height:1.5}
+.outcome p strong{color:var(--text)}
+
+/* WHEN */
+#when{background:var(--ymanci);padding:3.5rem 0}
+#when h2{color:#fff;margin-bottom:.6rem}
+.when-intro{color:rgba(255,255,255,.68);margin-bottom:1.8rem;font-size:.97rem;max-width:580px}
+.signals{display:grid;gap:.85rem}
+.signal{position:relative;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:1.1rem 1.25rem;display:flex;gap:.85rem;align-items:flex-start;transition:all .25s}
+.signal:hover{background:rgba(255,255,255,.12);border-color:rgba(232,96,10,.4);transform:translateX(4px)}
+.signal-icon{font-size:1.35rem;flex-shrink:0}
+.signal h3{color:#fff;font-size:.93rem;margin-bottom:.2rem}
+.signal p{color:rgba(255,255,255,.58);font-size:.83rem;margin:0;line-height:1.5}
+.signal-trigger{display:inline-block;margin-top:.4rem;font-size:.73rem;font-weight:700;color:var(--accent);background:rgba(232,96,10,.12);border-radius:999px;padding:.15rem .65rem;border:1px solid rgba(232,96,10,.25)}
+
+/* YOU DO */
+#you-do{background:var(--off)}
+.simple-steps{display:grid;gap:.85rem;margin-top:1.8rem}
+.simple-step{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.3rem;display:flex;gap:1rem;align-items:flex-start;box-shadow:var(--shadow);transition:all .25s}
+.simple-step:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.step-num{width:32px;height:32px;flex-shrink:0;background:var(--ymanci);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem}
+.simple-step h3{font-size:.93rem;margin-bottom:.2rem}
+.simple-step p{font-size:.84rem;color:var(--muted);margin:0;line-height:1.5}
+.note-green{margin-top:1.5rem;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:var(--radius);padding:.95rem 1.2rem;display:flex;gap:.65rem;font-size:.87rem;color:#065f46;line-height:1.55}
+.note-green::before{content:'✅';flex-shrink:0}
+
+/* I DO */
+#i-do{background:#fff}
+.i-do-cards{display:grid;gap:.8rem;margin-top:1.8rem}
+.i-do-card{display:flex;gap:.85rem;align-items:flex-start;border-left:3px solid var(--accent);background:var(--off);border-radius:0 var(--radius) var(--radius) 0;padding:1rem 1.25rem}
+.i-do-icon{font-size:1.25rem;flex-shrink:0}
+.i-do-card h3{font-size:.93rem;margin-bottom:.2rem;color:var(--ymanci)}
+.i-do-card p{font-size:.84rem;color:var(--muted);margin:0;line-height:1.5}
+.disclaimer-mini{margin-top:1.5rem;background:#fefce8;border:1px solid #fde68a;border-radius:var(--radius);padding:.9rem 1.2rem;display:flex;gap:.65rem;font-size:.8rem;color:#78350f;line-height:1.55}
+.disclaimer-mini::before{content:'ℹ️';flex-shrink:0}
+
+/* BENEFITS */
+#benefits{background:var(--ymanci);padding:3.5rem 0}
+#benefits h2{color:#fff;margin-bottom:.6rem}
+.benefits-grid{display:grid;gap:.85rem;margin-top:1.8rem}
+.benefit{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:1.1rem 1.3rem;display:flex;gap:.85rem;align-items:flex-start;transition:all .25s}
+.benefit:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.25)}
+.benefit-icon{font-size:1.4rem;flex-shrink:0}
+.benefit h3{color:#fff;font-size:.93rem;margin-bottom:.2rem}
+.benefit p{color:rgba(255,255,255,.58);font-size:.83rem;margin:0;line-height:1.5}
+
+/* CTA STRIPE */
+.cta-stripe{background:var(--accent);padding:2rem 0;text-align:center}
+.cta-stripe h2{color:#fff;margin-bottom:.75rem}
+.cta-stripe p{color:rgba(255,255,255,.8);font-size:.95rem;margin-bottom:1.5rem;max-width:480px;margin-left:auto;margin-right:auto}
+
+/* METIERS */
+#metiers{background:var(--off)}
+.metiers-grid{display:grid;gap:1rem}
+.metier{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem 1.4rem;box-shadow:var(--shadow);transition:all .25s}
+.metier:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);border-color:var(--ymanci)}
+.metier-head{display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem}
+.metier-emoji{font-size:1.6rem}
+.metier h3{font-size:.97rem;color:var(--ymanci);margin:0}
+.metier-situation{font-size:.84rem;color:var(--muted);background:var(--off);border-radius:8px;padding:.7rem .9rem;margin-bottom:.6rem;line-height:1.55;border-left:2px solid var(--border)}
+.metier-situation strong{color:var(--text)}
+.metier-result{display:flex;align-items:center;gap:.45rem;font-size:.83rem;font-weight:700;color:var(--success)}
+.metier-result::before{content:'→';color:var(--accent)}
+
+/* PROCESS */
+#process{background:#fff}
+.process-list{display:grid;gap:0;margin-top:2rem}
+.process-step{display:flex;gap:1.1rem;align-items:flex-start;padding-bottom:2rem;position:relative}
+.process-step:last-child{padding-bottom:0}
+.p-line{position:absolute;left:15px;top:34px;bottom:0;width:2px;background:var(--border)}
+.process-step:last-child .p-line{display:none}
+.p-dot{width:32px;height:32px;flex-shrink:0;background:var(--ymanci);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;z-index:1;box-shadow:0 0 0 4px var(--off)}
+.p-dot.orange{background:var(--accent)}
+.p-content h3{font-size:.97rem;margin-bottom:.25rem}
+.p-content p{font-size:.85rem;color:var(--muted);margin:0;line-height:1.55}
+.p-delay{display:inline-block;margin-top:.4rem;font-size:.73rem;font-weight:700;color:var(--ymanci);background:rgba(45,42,123,.07);border-radius:999px;padding:.15rem .65rem;border:1px solid rgba(45,42,123,.12)}
+.p-delay.fast{color:var(--success);background:rgba(15,169,110,.07);border-color:rgba(15,169,110,.15)}
+
+/* FAQ */
+#faq{background:var(--off)}
+.faq-list{display:grid;gap:.7rem;margin-top:1.8rem}
+.faq-item{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:1.05rem 1.25rem;display:flex;justify-content:space-between;align-items:center;gap:.75rem;font-weight:700;font-size:.92rem;color:var(--text);transition:color .2s}
+.faq-q:hover{color:var(--ymanci)}
+.faq-arrow{width:22px;height:22px;flex-shrink:0;border-radius:50%;background:var(--off);display:flex;align-items:center;justify-content:center;font-size:.75rem;transition:transform .3s,background .2s}
+.faq-item.open .faq-arrow{transform:rotate(180deg);background:var(--ymanci);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;font-size:.87rem;color:var(--muted);line-height:1.65;padding:0 1.25rem}
+.faq-item.open .faq-a{max-height:300px;padding:.1rem 1.25rem 1.2rem}
+.faq-a strong{color:var(--text)}
+
+/* CONTACT */
+#contact{background:var(--ymanci);padding:3.5rem 0}
+#contact h2{color:#fff;margin-bottom:.5rem}
+.contact-sub{color:rgba(255,255,255,.68);font-size:.97rem;margin-bottom:2rem;max-width:520px}
+.contact-card{background:#fff;border-radius:var(--radius-lg);padding:1.8rem 1.5rem;box-shadow:0 16px 60px rgba(0,0,0,.25)}
+.contact-btn{display:flex;align-items:center;gap:1rem;padding:1.4rem 1.6rem;border-radius:var(--radius);border:2px solid var(--border);background:var(--off);transition:all .2s;width:100%}
+.contact-btn:hover{border-color:var(--ymanci);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.contact-btn-icon{font-size:1.8rem;flex-shrink:0}
+.contact-btn-label{font-size:.75rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.15rem}
+.contact-btn-value{font-size:1.15rem;font-weight:800;color:var(--ymanci)}
+.contact-note{text-align:center;font-size:.82rem;color:var(--muted);padding-top:1rem;border-top:1px solid var(--border);margin-top:1.2rem}
+
+/* FOOTER */
+#footer{background:var(--ymanci-d);padding:2rem 1.25rem}
+.footer-inner{max-width:820px;margin:0 auto}
+.footer-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-links a{font-size:.78rem;color:rgba(255,255,255,.45);transition:color .2s}
+.footer-links a:hover{color:#fff}
+.disclaimer{font-size:.74rem;color:rgba(255,255,255,.35);line-height:1.65}
+.disclaimer strong{color:rgba(255,255,255,.55)}
+
+/* MOBILE BAR */
+#mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:700;background:var(--ymanci-d);padding:.85rem 1rem;border-top:1px solid rgba(255,255,255,.1);box-shadow:0 -4px 24px rgba(45,42,123,.3)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* CALCULATRICE */
+#calculatrice{background:#fff}
+.calc-card{background:var(--off);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:1.8rem}
+.calc-block{padding:1.5rem;border-bottom:1px solid var(--border)}
+.calc-block:last-of-type{border-bottom:none}
+.calc-block-title{font-weight:800;font-size:.97rem;color:var(--ymanci);margin-bottom:1.1rem;font-family:'Plus Jakarta Sans',sans-serif}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:.75rem}
+.calc-row:last-child{margin-bottom:0}
+.calc-field{display:flex;flex-direction:column;gap:.35rem}
+.calc-field label{font-size:.75rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.calc-input-wrap{position:relative;display:flex;align-items:center}
+.calc-unit{position:absolute;left:.85rem;font-size:.9rem;color:var(--muted);font-weight:700;pointer-events:none}
+.calc-input-wrap input{width:100%;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:.75rem .75rem .75rem 2rem;font-family:inherit;font-size:.93rem;color:var(--text);outline:none;transition:border-color .2s}
+.calc-input-wrap input:focus{border-color:var(--ymanci)}
+.calc-total-field .calc-total{background:rgba(45,42,123,.07);border:1.5px solid rgba(45,42,123,.15);border-radius:8px;padding:.75rem 1rem;font-weight:800;font-size:1rem;color:var(--ymanci);min-height:44px;display:flex;align-items:center}
+.credit-row{display:flex;gap:.6rem;align-items:center;margin-bottom:.65rem}
+.credit-type{flex:0 0 140px;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:.72rem .7rem;font-family:inherit;font-size:.83rem;color:var(--text);outline:none;cursor:pointer}
+.credit-remove{width:30px;height:30px;flex-shrink:0;border-radius:50%;background:rgba(232,96,10,.1);color:var(--accent);font-size:.8rem;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;transition:background .2s}
+.credit-remove:hover{background:rgba(232,96,10,.25)}
+.btn-add-credit{background:none;border:1.5px dashed var(--border);border-radius:8px;padding:.6rem 1rem;font-size:.83rem;font-weight:700;color:var(--muted);cursor:pointer;width:100%;transition:all .2s;font-family:inherit}
+.btn-add-credit:hover{border-color:var(--ymanci);color:var(--ymanci);background:rgba(45,42,123,.04)}
+
+.calc-result{padding:1.5rem;background:#fff}
+.result-placeholder{text-align:center;color:var(--muted);font-size:.9rem;padding:1rem 0}
+.result-box{border-radius:var(--radius);padding:1.4rem 1.5rem}
+.result-box.green{background:#ecfdf5;border:2px solid #34d399}
+.result-box.orange{background:#fff7ed;border:2px solid #fb923c}
+.result-box.red{background:#fef2f2;border:2px solid #f87171}
+.result-title{font-weight:800;font-size:1.1rem;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1rem}
+.result-item{background:rgba(255,255,255,.7);border-radius:8px;padding:.75rem 1rem}
+.result-item-label{font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem}
+.result-item-value{font-size:1.05rem;font-weight:800;color:var(--text)}
+.result-item-value.highlight{color:var(--ymanci)}
+.result-cta{margin-top:1rem;text-align:center}
+
+/* RESPONSIVE CALC */
+@media(max-width:580px){
+  .calc-row{grid-template-columns:1fr}
+  .result-grid{grid-template-columns:1fr 1fr}
+  .credit-type{flex:0 0 110px;font-size:.78rem}
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  h1{font-size:1.7rem}h2{font-size:1.35rem}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn{width:100%;justify-content:center}
+  #mobile-bar{display:block}
+  body{padding-bottom:82px}
+  .footer-top{flex-direction:column;align-items:flex-start}
+}
+@media(min-width:601px){
+  .signals{grid-template-columns:1fr 1fr}
+  .metiers-grid{grid-template-columns:1fr 1fr}
+  .benefits-grid{grid-template-columns:1fr 1fr}
+  .outcomes{grid-template-columns:1fr 1fr}
+  .i-do-cards{grid-template-columns:1fr 1fr}
+}
+@media(min-width:768px){
+  section{padding:5rem 0}
+  #hero{padding:4.5rem 0 5rem}
+  #when,#benefits,#contact{padding:5rem 0}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <svg height="30" viewBox="0 0 180 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        
+        
+        
+        
+        <text x="8" y="43" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="800" font-size="30" fill="white" letter-spacing="-0.5">MG</text>
+      </svg>
+      <div class="logo-sep"></div>
+      <span class="logo-tagline">Partenariat Prescripteurs</span>
+    </div>
+    <a href="tel:0783891632" class="header-cta">📞 Appeler</a>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="wrap">
+    <div class="hero-badge"><span class="dot"></span>Partenariat prescripteurs — MG</div>
+    <h1>Votre client est bloqué.<br><em>Vous pouvez débloquer sa vente.</em></h1>
+    <p class="hero-sub">Quand un client n'a plus la capacité financière pour concrétiser un projet, transmettez-moi son contact. Je réalise une étude de regroupement de crédits. <strong style="color:#fff">Vous ne vendez rien. Vous ne faites rien de plus.</strong></p>
+    <div class="hero-actions">
+      <a href="tel:0783891632" class="btn btn-orange btn-lg">📞 07 83 89 16 32</a>
+      <a href="#when" class="btn btn-outline btn-lg">Voir les cas concrets</a>
+    </div>
+    <div class="hero-proof">
+      <span class="proof-chip">Aucune compétence financière requise</span>
+      <span class="proof-chip">Zéro responsabilité pour vous</span>
+      <span class="proof-chip">Je gère tout, de A à Z</span>
+      <span class="proof-chip">Votre client reste votre client</span>
+    </div>
+  </div>
+</section>
+
+<section id="definition">
+  <div class="wrap">
+    <span class="s-tag reveal">Comprendre le principe</span>
+    <h2 class="reveal">Le regroupement de crédits,<br>c'est quoi concrètement ?</h2>
+    <div class="def-box reveal">
+      <p>Le regroupement de crédits consiste à <strong>rassembler plusieurs prêts en un seul</strong>, avec une mensualité unique, réduite et adaptée au budget du client. L'objectif : <strong>rééquilibrer ses finances</strong> pour lui permettre de retrouver une capacité à financer un nouveau projet.</p>
+    </div>
+    <p class="section-intro reveal">En pratique, cela peut permettre à votre client de :</p>
+    <div class="outcomes reveal">
+      <div class="outcome"><span class="outcome-icon">📉</span><p><strong>Réduire ses mensualités</strong> et retrouver du souffle financier chaque mois</p></div>
+      <div class="outcome"><span class="outcome-icon">💰</span><p><strong>Récupérer du reste à vivre</strong> pour faire face à ses dépenses courantes</p></div>
+      <div class="outcome"><span class="outcome-icon">🏗️</span><p><strong>Financer un nouveau projet</strong> — travaux, véhicule, immobilier…</p></div>
+      <div class="outcome"><span class="outcome-icon">🚫</span><p><strong>Éviter un refus bancaire</strong> en assainissant son taux d'endettement</p></div>
+      <div class="outcome"><span class="outcome-icon">✅</span><p><strong>Concrétiser votre vente</strong> en retrouvant la capacité de financement nécessaire</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="when">
+  <div class="wrap">
+    <span class="s-tag reveal" style="color:rgba(255,255,255,.6)">1 — Quand me contacter ?</span>
+    <h2 class="reveal">Repérez le signal.<br>Transmettez le contact.</h2>
+    <p class="when-intro reveal">Ces situations se produisent tous les jours dans votre activité. Vous n'avez pas à trouver de solution — juste à reconnaître le signal.</p>
+    <div class="signals">
+      <div class="signal reveal"><span class="signal-icon">🔧</span><div><h3>Devis accepté, mais le client ne peut pas payer</h3><p>Il a dit oui à votre proposition. Mais ses charges actuelles l'empêchent de s'engager.</p><a href="tel:0783891632" style="position:absolute;inset:0;z-index:2;" aria-label="Appeler Mehdi Gerbier"></a><span class="signal-trigger">→ Transmettez le contact</span></div></div>
+      <div class="signal reveal"><span class="signal-icon">🏠</span><div><h3>Refus bancaire pour un achat immobilier</h3><p>Votre acheteur est motivé. Mais son taux d'endettement bloque le financement.</p><a href="tel:0783891632" style="position:absolute;inset:0;z-index:2;" aria-label="Appeler Mehdi Gerbier"></a><span class="signal-trigger">→ Transmettez le contact</span></div></div>
+      <div class="signal reveal"><span class="signal-icon">🚗</span><div><h3>Client qui ne peut plus financer un véhicule</h3><p>Il veut acheter ou changer de voiture, mais ses mensualités saturent sa capacité d'emprunt.</p><a href="tel:0783891632" style="position:absolute;inset:0;z-index:2;" aria-label="Appeler Mehdi Gerbier"></a><span class="signal-trigger">→ Transmettez le contact</span></div></div>
+      <div class="signal reveal"><span class="signal-icon">📋</span><div><h3>Projet travaux bloqué par l'endettement</h3><p>Le client a besoin de rénover ou d'équiper son logement. Son budget ne suit pas.</p><a href="tel:0783891632" style="position:absolute;inset:0;z-index:2;" aria-label="Appeler Mehdi Gerbier"></a><span class="signal-trigger">→ Transmettez le contact</span></div></div>
+      <div class="signal reveal"><span class="signal-icon">📁</span><div><h3>Dossier refusé en courtage ou assurance</h3><p>Votre client est éligible à votre produit, mais son profil financier bloque la suite.</p><a href="tel:0783891632" style="position:absolute;inset:0;z-index:2;" aria-label="Appeler Mehdi Gerbier"></a><span class="signal-trigger">→ Transmettez le contact</span></div></div>
+      <div class="signal reveal"><span class="signal-icon">💬</span><div><h3>Le client dit "j'ai trop de crédits"</h3><p>Phrase clé. Vous n'avez pas à creuser — c'est exactement la situation pour laquelle je travaille.</p><a href="tel:0783891632" style="position:absolute;inset:0;z-index:2;" aria-label="Appeler Mehdi Gerbier"></a><span class="signal-trigger">→ Transmettez le contact</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="you-do">
+  <div class="wrap">
+    <span class="s-tag reveal">2 — Ce que vous faites concrètement</span>
+    <h2 class="reveal">Trois actions. Pas plus.</h2>
+    <p class="section-intro reveal">Vous n'avez pas à comprendre le crédit, à expliquer quoi que ce soit, ni à faire du commercial.</p>
+    <div class="simple-steps">
+      <div class="simple-step reveal"><div class="step-num">1</div><div><h3>Repérez la situation de blocage</h3><p>Votre client évoque un problème de budget, un refus, une mensualité trop haute. C'est le signal.</p></div></div>
+      <div class="simple-step reveal"><div class="step-num">2</div><div><h3>Dites-lui une phrase simple</h3><p>« J'ai un partenaire spécialisé dans le regroupement de crédits. Il peut regarder si une solution existe pour vous. Vous souhaitez qu'il vous contacte ? »</p></div></div>
+      <div class="simple-step reveal"><div class="step-num">3</div><div><h3>Transmettez le contact</h3><p>Nom, prénom, téléphone. C'est tout. Je prends le relais immédiatement.</p></div></div>
+    </div>
+    <div class="note-green reveal"><strong>Vous ne vendez pas un crédit.</strong> Vous mettez simplement en relation un client ayant un blocage budgétaire avec un expert qui peut l'aider. Rien de plus.</div>
+    <div style="margin-top:2rem;text-align:center"><a href="tel:0783891632" class="btn btn-orange btn-lg reveal">📞 07 83 89 16 32</a></div>
+  </div>
+</section>
+
+<section id="i-do">
+  <div class="wrap">
+    <span class="s-tag reveal">3 — Ce que je fais</span>
+    <h2 class="reveal">Je m'occupe de tout ce qui suit.</h2>
+    <p class="section-intro reveal">Une fois le contact transmis, vous n'avez plus rien à faire.</p>
+    <div class="i-do-cards">
+      <div class="i-do-card reveal"><span class="i-do-icon">📞</span><div><h3>Rappel du client sous 24h</h3><p>Je contacte votre client rapidement, en me référant à votre mise en relation.</p></div></div>
+      <div class="i-do-card reveal"><span class="i-do-icon">🔍</span><div><h3>Analyse complète de la situation financière</h3><p>Je fais un bilan de l'ensemble de ses crédits, de ses charges et de ses revenus.</p></div></div>
+      <div class="i-do-card reveal"><span class="i-do-icon">📊</span><div><h3>Étude personnalisée de regroupement</h3><p>Je modélise une ou plusieurs solutions adaptées à sa situation via mes partenaires bancaires.</p></div></div>
+      <div class="i-do-card reveal"><span class="i-do-icon">🗣️</span><div><h3>Accompagnement et explication</h3><p>J'explique clairement les options. Le client prend sa décision librement, sans pression.</p></div></div>
+      <div class="i-do-card reveal"><span class="i-do-icon">📩</span><div><h3>Montage et suivi du dossier</h3><p>Je constitue le dossier complet et assure le suivi jusqu'à la décision finale.</p></div></div>
+      <div class="i-do-card reveal"><span class="i-do-icon">🔁</span><div><h3>Retour vers vous si la vente est débloquée</h3><p>Si le regroupement libère la capacité nécessaire, je vous en informe pour que vous finalisiez.</p></div></div>
+    </div>
+    <div class="disclaimer-mini reveal">Toute étude est gratuite et sans engagement pour le client. Elle reste soumise à l'acceptation de mes partenaires bancaires. Aucun résultat ne peut être garanti.</div>
+  </div>
+</section>
+
+<section id="benefits">
+  <div class="wrap">
+    <span class="s-tag reveal" style="color:rgba(255,255,255,.6)">4 — Ce que ça vous apporte</span>
+    <h2 class="reveal">Des ventes qui se font.<br>Des clients qui restent.</h2>
+    <div class="benefits-grid">
+      <div class="benefit reveal"><span class="benefit-icon">💼</span><div><h3>Vous sauvez des ventes perdues</h3><p>Un client bloqué n'est pas forcément perdu. Si une solution existe, votre vente peut se faire.</p></div></div>
+      <div class="benefit reveal"><span class="benefit-icon">🤝</span><div><h3>Vous apportez une vraie valeur ajoutée</h3><p>Vous avez orienté votre client vers une solution concrète. C'est différenciant.</p></div></div>
+      <div class="benefit reveal"><span class="benefit-icon">⏱️</span><div><h3>Ça ne vous coûte rien en temps</h3><p>Quelques secondes pour transmettre un contact. Aucune formation. Aucun suivi.</p></div></div>
+      <div class="benefit reveal"><span class="benefit-icon">🔒</span><div><h3>Votre client reste votre client</h3><p>Mon rôle s'arrête à la solution financière. La relation commerciale reste la vôtre.</p></div></div>
+      <div class="benefit reveal"><span class="benefit-icon">📣</span><div><h3>Vous vous démarquez de vos concurrents</h3><p>Rares sont les professionnels qui proposent une orientation financière à leurs clients bloqués.</p></div></div>
+      <div class="benefit reveal"><span class="benefit-icon">🛡️</span><div><h3>Zéro responsabilité juridique</h3><p>Vous orientez. C'est tout. La responsabilité de l'étude et du conseil est la mienne.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-stripe">
+  <div class="wrap">
+    <h2 class="reveal">Un client bloqué en ce moment ?</h2>
+    <p class="reveal">Ne perdez pas cette vente. Appelez-moi. Je rappelle votre client sous 24h.</p>
+    <a href="tel:0783891632" class="btn btn-white btn-lg reveal">📞 07 83 89 16 32</a>
+  </div>
+</div>
+
+<section id="metiers">
+  <div class="wrap">
+    <span class="s-tag reveal">Cas concrets par métier</span>
+    <h2 class="reveal">Votre secteur. Vos situations.</h2>
+    <p class="section-intro reveal">Le blocage financier d'un client ne concerne pas qu'un seul type de professionnel.</p>
+    <div class="metiers-grid">
+      <div class="metier reveal"><div class="metier-head"><span class="metier-emoji">🔨</span><h3>Artisan / Bâtiment</h3></div><div class="metier-situation"><strong>La situation :</strong> Votre client a signé le devis mais ne peut pas lancer les travaux — ses mensualités l'en empêchent.</div><div class="metier-result">Vous me transmettez son contact. Je regarde si un regroupement peut libérer sa capacité.</div></div>
+      <div class="metier reveal"><div class="metier-head"><span class="metier-emoji">🏘️</span><h3>Agence immobilière</h3></div><div class="metier-situation"><strong>La situation :</strong> Votre acheteur est séduit par le bien. Sa banque refuse : taux d'endettement trop élevé.</div><div class="metier-result">Un regroupement peut réduire son endettement et rouvrir la porte au financement.</div></div>
+      <div class="metier reveal"><div class="metier-head"><span class="metier-emoji">🚘</span><h3>Garage / Concessionnaire</h3></div><div class="metier-situation"><strong>La situation :</strong> Votre client veut le véhicule. Le financement auto est refusé : charges trop élevées.</div><div class="metier-result">Regrouper ses crédits peut libérer la capacité pour financer le véhicule.</div></div>
+      <div class="metier reveal"><div class="metier-head"><span class="metier-emoji">📑</span><h3>Courtier en crédit</h3></div><div class="metier-situation"><strong>La situation :</strong> Dossier finançable en théorie, mais le reste à vivre est insuffisant ou l'endettement trop haut.</div><div class="metier-result">Je prends le relais. Si la situation se stabilise, votre financement redevient possible.</div></div>
+      <div class="metier reveal"><div class="metier-head"><span class="metier-emoji">🛡️</span><h3>Assureur / Conseiller assurance</h3></div><div class="metier-situation"><strong>La situation :</strong> Votre client ne peut plus assumer ses primes ou n'a plus de capacité d'épargne.</div><div class="metier-result">Un regroupement peut dégager du reste à vivre pour maintenir ou souscrire ses contrats.</div></div>
+      <div class="metier reveal"><div class="metier-head"><span class="metier-emoji">🏪</span><h3>Commerçant / Franchise</h3></div><div class="metier-situation"><strong>La situation :</strong> Un client régulier réduit ses achats. Il évoque des fins de mois difficiles.</div><div class="metier-result">Vous lui signalez la possibilité d'une étude. Ça ne coûte rien. Ça peut tout changer.</div></div>
+      <div class="metier reveal"><div class="metier-head"><span class="metier-emoji">⚕️</span><h3>Profession libérale</h3></div><div class="metier-situation"><strong>La situation :</strong> Un patient ou client mentionne une situation financière tendue ou un refus bancaire.</div><div class="metier-result">Vous l'orientez simplement. Vous ne conseillez pas — vous renvoyez vers un expert.</div></div>
+      <div class="metier reveal"><div class="metier-head"><span class="metier-emoji">🏗️</span><h3>Promoteur / Constructeur</h3></div><div class="metier-situation"><strong>La situation :</strong> Un acquéreur signe une réservation mais son financement est bloqué en banque.</div><div class="metier-result">Une étude de regroupement peut assainir son profil avant le financement principal.</div></div>
+    </div>
+    <div style="margin-top:2.5rem;text-align:center"><a href="tel:0783891632" class="btn btn-orange btn-lg reveal">📞 07 83 89 16 32</a></div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <span class="s-tag reveal">Comment ça se passe</span>
+    <h2 class="reveal">4 étapes. De la mise en relation au résultat.</h2>
+    <p class="section-intro reveal">Un process clair, transparent, sans charge de votre côté.</p>
+    <div class="process-list">
+      <div class="process-step reveal"><div class="p-line"></div><div class="p-dot">1</div><div class="p-content"><h3>Vous transmettez le contact du client</h3><p>Par téléphone ou message. Nom + prénom + numéro, c'est suffisant.</p><span class="p-delay fast">⏱ Moins de 2 minutes pour vous</span></div></div>
+      <div class="process-step reveal"><div class="p-line"></div><div class="p-dot orange">2</div><div class="p-content"><h3>Je rappelle votre client</h3><p>Sous 24h ouvrées. Je me présente en me référant à vous et prends le temps d'écouter.</p><span class="p-delay">📞 Rappel sous 24h ouvrées</span></div></div>
+      <div class="process-step reveal"><div class="p-line"></div><div class="p-dot">3</div><div class="p-content"><h3>Je réalise l'étude et présente les options</h3><p>Analyse complète, simulation personnalisée. Le client décide librement, sans pression.</p><span class="p-delay">📊 Étude gratuite, sans engagement</span></div></div>
+      <div class="process-step reveal"><div class="p-line"></div><div class="p-dot orange">4</div><div class="p-content"><h3>Je vous informe si votre vente est débloquée</h3><p>Si une solution est trouvée, je vous le signale. Vous reprenez la main sur votre projet.</p><span class="p-delay fast">✅ Retour vers vous si situation débloquée</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <span class="s-tag reveal">Questions fréquentes</span>
+    <h2 class="reveal">Ce que vous vous demandez sûrement.</h2>
+    <div class="faq-list">
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span>Est-ce que je vais devoir vendre un crédit à mon client ?</span><span class="faq-arrow">▾</span></button><div class="faq-a"><strong>Non. Absolument pas.</strong> Vous orientez simplement votre client vers quelqu'un qui peut regarder si une solution existe. C'est mon rôle d'expliquer, d'analyser et de proposer.</div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span>Est-ce que j'engage ma responsabilité en transmettant un contact ?</span><span class="faq-arrow">▾</span></button><div class="faq-a"><strong>Non.</strong> Mettre quelqu'un en relation avec un expert n'engage pas votre responsabilité. Vous ne conseillez pas, vous ne recommandez pas un produit financier. La relation contractuelle et le conseil sont de mon ressort.</div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span>Combien de temps ça me prend ?</span><span class="faq-arrow">▾</span></button><div class="faq-a"><strong>Moins de deux minutes.</strong> Vous me transmettez un nom et un numéro. C'est la seule action requise. Je me charge de tout ce qui suit.</div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span>Et si mon client refuse d'être contacté ?</span><span class="faq-arrow">▾</span></button><div class="faq-a">C'est son droit. <strong>Il n'y a aucune obligation.</strong> Si votre client ne souhaite pas être rappelé, on ne donne pas suite. Cela ne change rien à votre relation avec lui.</div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span>Est-ce que je vais perdre mon client en le renvoyant vers vous ?</span><span class="faq-arrow">▾</span></button><div class="faq-a"><strong>Non.</strong> Mon rôle se limite à la partie financière. Votre client reste votre client. Si la situation se débloque, c'est vous qu'il contacte pour finaliser son projet.</div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span>Le regroupement de crédits est-il toujours possible ?</span><span class="faq-arrow">▾</span></button><div class="faq-a"><strong>Pas systématiquement.</strong> Chaque dossier est différent. Si ce n'est pas faisable, je l'indique clairement au client. Ce que je garantis : une analyse sérieuse, rapide et gratuite.</div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span>Est-ce que mon client devra payer pour l'étude ?</span><span class="faq-arrow">▾</span></button><div class="faq-a"><strong>L'étude est entièrement gratuite et sans engagement.</strong> Des frais n'interviennent qu'en cas de mise en place effective, clairement présentés avant toute décision.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATRICE -->
+<section id="calculatrice" style="background:#fff">
+  <div class="wrap">
+    <span class="s-tag reveal">Outil d'aide à la décision</span>
+    <h2 class="reveal">Votre client peut-il être financé ?</h2>
+    <p class="section-intro reveal">Renseignez les informations de base. Le résultat s'affiche instantanément — sans données personnelles, sans engagement.</p>
+
+    <div class="calc-card reveal">
+
+      <!-- REVENUS -->
+      <div class="calc-block">
+        <div class="calc-block-title">💰 Revenus du foyer</div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label>Revenus emprunteur (net/mois)</label>
+            <div class="calc-input-wrap"><span class="calc-unit">€</span><input type="number" id="rev1" placeholder="0" min="0" oninput="calcUpdate()"></div>
+          </div>
+          <div class="calc-field">
+            <label>Revenus co-emprunteur (net/mois)</label>
+            <div class="calc-input-wrap"><span class="calc-unit">€</span><input type="number" id="rev2" placeholder="0" min="0" oninput="calcUpdate()"></div>
+          </div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label>Allocations / autres revenus</label>
+            <div class="calc-input-wrap"><span class="calc-unit">€</span><input type="number" id="rev3" placeholder="0" min="0" oninput="calcUpdate()"></div>
+          </div>
+          <div class="calc-field calc-total-field">
+            <label>Total revenus</label>
+            <div class="calc-total" id="totalRev">0 €</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CREDITS ACTUELS -->
+      <div class="calc-block">
+        <div class="calc-block-title">📋 Crédits actuels (mensualités)</div>
+        <div id="credits-list">
+          <div class="credit-row">
+            <select class="credit-type" onchange="calcUpdate()">
+              <option value="conso">Crédit conso</option>
+              <option value="immo">Crédit immo</option>
+              <option value="auto">Crédit auto</option>
+              <option value="renouv">Renouvelable</option>
+            </select>
+            <div class="calc-input-wrap" style="flex:1"><span class="calc-unit">€</span><input type="number" placeholder="Mensualité" min="0" class="credit-amount" oninput="calcUpdate()"></div>
+            <button class="credit-remove" onclick="removeCredit(this)" title="Supprimer">✕</button>
+          </div>
+        </div>
+        <button class="btn-add-credit" onclick="addCredit()">+ Ajouter un crédit</button>
+        <div class="calc-row" style="margin-top:1rem">
+          <div class="calc-field">
+            <label>Loyer mensuel (si locataire)</label>
+            <div class="calc-input-wrap"><span class="calc-unit">€</span><input type="number" id="loyer" placeholder="0" min="0" oninput="calcUpdate()"></div>
+          </div>
+          <div class="calc-field calc-total-field">
+            <label>Total charges</label>
+            <div class="calc-total" id="totalCharges">0 €</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJET -->
+      <div class="calc-block">
+        <div class="calc-block-title">🎯 Projet du client</div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label>Trésorerie souhaitée (projet)</label>
+            <div class="calc-input-wrap"><span class="calc-unit">€</span><input type="number" id="treso" placeholder="0" min="0" oninput="calcUpdate()"></div>
+          </div>
+          <div class="calc-field">
+            <label>Durée souhaitée du regroupement</label>
+            <select id="duree" onchange="calcUpdate()" style="background:#f6f7fb;border:1.5px solid #e4e6f0;border-radius:8px;padding:.78rem 1rem;font-family:inherit;font-size:.93rem;width:100%;outline:none">
+              <option value="84">7 ans</option>
+              <option value="120" selected>10 ans</option>
+              <option value="144">12 ans</option>
+              <option value="180">15 ans</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- RÉSULTAT -->
+      <div class="calc-result" id="calcResult">
+        <div class="result-placeholder">👆 Renseignez les revenus et charges pour voir le résultat</div>
+      </div>
+
+    </div>
+
+    <p style="font-size:.75rem;color:var(--muted);margin-top:1.5rem;line-height:1.6">
+      ⚠️ Cet outil est une simulation indicative destinée aux prescripteurs. Il ne constitue pas une offre de crédit. Le résultat réel dépend de l'analyse complète du dossier par MG et reste soumis à acceptation.
+    </p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <span class="s-tag reveal" style="color:rgba(255,255,255,.6)">→ Me contacter</span>
+    <h2 class="reveal">Transmettez un contact.<br>Je m'occupe du reste.</h2>
+    <p class="contact-sub reveal">Un appel suffit. Je rappelle votre client sous 24h ouvrées.</p>
+    <div class="contact-card reveal">
+      <a href="tel:0783891632" class="contact-btn">
+        <span class="contact-btn-icon">📞</span>
+        <div>
+          <div class="contact-btn-label">Appeler directement</div>
+          <div class="contact-btn-value">07 83 89 16 32</div>
+        </div>
+      </a>
+      <p class="contact-note">Mehdi Gerbier — Conseiller en regroupement de crédits</p>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <svg height="26" viewBox="0 0 180 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        
+        
+        
+        
+        <text x="8" y="43" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="800" font-size="30" fill="white" letter-spacing="-0.5" opacity=".55">MG</text>
+      </svg>
+      <nav class="footer-links">
+        <a href="#definition">Le regroupement</a>
+        <a href="#when">Quand me contacter</a>
+        <a href="#calculatrice">Simulateur</a>
+        <a href="#metiers">Cas par métier</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <p class="disclaimer"><strong>Mentions légales :</strong> Toute étude de regroupement de crédits est réalisée à titre gratuit et sans engagement, sur la base des informations communiquées par l'emprunteur. Elle ne constitue pas une offre de crédit ni un engagement de financement. Son aboutissement dépend de la situation personnelle, financière et patrimoniale de chaque emprunteur et reste soumis à l'acceptation de mes partenaires bancaires. Aucun résultat ni taux ne peut être garanti. Le prescripteur intervient uniquement en tant que tiers orienteur. Je suis courtier en crédits inscrit à l'ORIAS. — © 2025 Mehdi Gerbier. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<div id="mobile-bar">
+  <a href="tel:0783891632" class="btn btn-orange" style="width:100%;justify-content:center;padding:1rem">📞 07 83 89 16 32 — Appeler Mehdi</a>
+</div>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  });
+});
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* Calculator logic */
+function val(id){ return parseFloat(document.getElementById(id)?.value)||0; }
+
+function addCredit(){
+  const list = document.getElementById('credits-list');
+  const div = document.createElement('div');
+  div.className = 'credit-row';
+  div.innerHTML = `<select class="credit-type" onchange="calcUpdate()">
+    <option value="conso">Crédit conso</option>
+    <option value="immo">Crédit immo</option>
+    <option value="auto">Crédit auto</option>
+    <option value="renouv">Renouvelable</option>
+  </select>
+  <div class="calc-input-wrap" style="flex:1"><span class="calc-unit">€</span><input type="number" placeholder="Mensualité" min="0" class="credit-amount" oninput="calcUpdate()"></div>
+  <button class="credit-remove" onclick="removeCredit(this)" title="Supprimer">✕</button>`;
+  list.appendChild(div);
+}
+
+function removeCredit(btn){
+  const rows = document.querySelectorAll('.credit-row');
+  if(rows.length > 1){ btn.closest('.credit-row').remove(); calcUpdate(); }
+}
+
+function calcPMT(rate, nper, pv){
+  if(rate === 0) return pv / nper;
+  return (rate * pv) / (1 - Math.pow(1 + rate, -nper));
+}
+
+function fmt(n){ return new Intl.NumberFormat('fr-FR',{maximumFractionDigits:0}).format(Math.round(n)) + ' €'; }
+function pct(n){ return (n*100).toFixed(1) + ' %'; }
+
+function calcUpdate(){
+  var rev = val('rev1') + val('rev2') + val('rev3');
+  document.getElementById('totalRev').textContent = rev > 0 ? fmt(rev) : '0 \u20ac';
+
+  var amounts = Array.from(document.querySelectorAll('.credit-amount')).map(function(i){ return parseFloat(i.value)||0; });
+  var totalCredits = amounts.reduce(function(a,b){ return a+b; },0);
+  var loyer = val('loyer');
+  var totalCharges = totalCredits + loyer;
+  document.getElementById('totalCharges').textContent = totalCharges > 0 ? fmt(totalCharges) : '0 \u20ac';
+
+  var result = document.getElementById('calcResult');
+  if(rev <= 0){ result.innerHTML = '<div class="result-placeholder">\ud83d\udc46 Renseignez les revenus pour voir le r\u00e9sultat</div>'; return; }
+
+  var teActuel = totalCharges / rev;
+  var treso = val('treso');
+  var duree = parseInt(document.getElementById('duree').value);
+
+  var tauxMensuel = 0.0703 / 12;
+  var montantRAC = totalCredits * duree * 0.6 + treso;
+  if(montantRAC < treso) montantRAC = treso;
+
+  var nouvMens = 0;
+  if(montantRAC > 0){ nouvMens = calcPMT(tauxMensuel, duree, montantRAC); }
+
+  var totalApres = nouvMens + loyer;
+  var teApres = totalApres / rev;
+  var gain = totalCredits - nouvMens;
+
+  var boxClass, icon, titre, conseil;
+  if(teActuel <= 0.35){
+    boxClass = 'green';
+    icon = '\u2705';
+    titre = 'Votre client peut probablement \u00eatre financ\u00e9 directement';
+    conseil = 'Son taux d\u2019endettement actuel est dans les normes. Un regroupement peut tout de m\u00eame optimiser son budget.';
+  } else if(teApres <= 0.35){
+    boxClass = 'orange';
+    icon = '\u26a1';
+    titre = 'Un regroupement de cr\u00e9dits peut d\u00e9bloquer la situation';
+    conseil = 'Le taux actuel d\u00e9passe les seuils, mais apr\u00e8s regroupement il repasserait dans les normes. C\u2019est exactement le cas \u00e0 me transmettre.';
+  } else {
+    boxClass = 'red';
+    icon = '\ud83d\udcde';
+    titre = 'Dossier complexe \u2014 \u00e0 me transmettre pour analyse approfondie';
+    conseil = 'Le taux reste \u00e9lev\u00e9 m\u00eame apr\u00e8s simulation. Une \u00e9tude compl\u00e8te est n\u00e9cessaire pour trouver la meilleure solution.';
+  }
+
+  var colorActuel = teActuel > 0.35 ? '#dc2626' : '#0fa96e';
+  var colorApres  = teApres  > 0.35 ? '#dc2626' : '#0fa96e';
+
+  var racHTML = '';
+  if(montantRAC > 0){
+    racHTML = '<div class="result-item"><div class="result-item-label">Nouvelle mensualit\u00e9 estim\u00e9e</div><div class="result-item-value highlight">' + fmt(nouvMens) + '</div></div>'
+            + '<div class="result-item"><div class="result-item-label">Taux apr\u00e8s regroupement</div><div class="result-item-value" style="color:' + colorApres + '">' + pct(teApres) + '</div></div>'
+            + '<div class="result-item"><div class="result-item-label">Gain mensuel estim\u00e9</div><div class="result-item-value" style="color:#0fa96e">' + (gain > 0 ? '+' + fmt(gain) : '\u2014') + '</div></div>';
+  }
+
+  result.innerHTML = '<div class="result-box ' + boxClass + '">'
+    + '<div class="result-title">' + icon + ' ' + titre + '</div>'
+    + '<div class="result-grid">'
+    + '<div class="result-item"><div class="result-item-label">Revenus du foyer</div><div class="result-item-value highlight">' + fmt(rev) + '</div></div>'
+    + '<div class="result-item"><div class="result-item-label">Charges actuelles</div><div class="result-item-value">' + fmt(totalCharges) + '</div></div>'
+    + '<div class="result-item"><div class="result-item-label">Taux d\u2019endettement actuel</div><div class="result-item-value" style="color:' + colorActuel + '">' + pct(teActuel) + '</div></div>'
+    + racHTML
+    + '</div>'
+    + '<p style="font-size:.82rem;color:#64748b;margin-bottom:.75rem">' + conseil + '</p>'
+    + '<div class="result-cta"><a href="tel:0783891632" class="btn btn-orange" style="width:100%;justify-content:center">\ud83d\udcde Transmettre ce dossier \u00e0 Mehdi \u2014 07 83 89 16 32</a></div>'
+    + '</div>';
+}
+
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); const offset = document.getElementById('header').offsetHeight + 10; window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' }); }
+  });
+});
+</script>
+</body>
+</html>
